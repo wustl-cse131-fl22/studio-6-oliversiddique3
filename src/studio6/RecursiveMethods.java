@@ -54,7 +54,7 @@ public class RecursiveMethods {
 //			return 0;
 		
 	
-	public static int[] toReversedHelper(int[] array, int index) {
+	public static int[] toReversedHelper(int[] array, int index, int[] result) {
 		index = array.length / 2;
 		int lastIndex = array.length - 1;
 		int mirrorIndex = lastIndex - index;
@@ -80,11 +80,8 @@ public class RecursiveMethods {
 		if (array.length == 0) {
 			return result;
 		}
-		else if (array.length == 1) {
-			return result;
-		}
 		else {
-			return toReversedHelper(array, array.length/2);
+			return toReversedHelper(array, array.length/2, result);
 		}
 			// FIXME create a helper method that can recursively reverse the given array
 	}
